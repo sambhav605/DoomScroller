@@ -10,7 +10,8 @@ from datetime import datetime, timedelta, timezone
 from time import mktime
 
 RSS_FEEDS = {
-    "RONB Post": "https://www.ronbpost.com/feed",       
+    "RONB Post": "https://www.ronbpost.com/feed", 
+    # "Online Khabar": "https://www.onlinekhabar.com/feed",      
 }
 
 HOURS_WINDOW = 24
@@ -71,4 +72,4 @@ if __name__ == "__main__":
     results = fetch_recent_articles()
     print(f"Fetched {len(results)} articles from the last {HOURS_WINDOW}h:\n")
     for a in results:
-        print(f"- [{a['source']}] {a['title']} ({a['published_at']})")
+        print(f"- [{a['source']}] {a['title']} ({a['published_at']}) ({a['summary']})")
