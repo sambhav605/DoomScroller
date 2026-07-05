@@ -1,0 +1,6 @@
+.vscode/ 
+.env 
+venv/
+
+app/memory/__pycache__
+app/memory/chroma_data
