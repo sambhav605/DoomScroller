@@ -2,5 +2,5 @@
 .env 
 venv/
 
-app/memory/__pycache__
+app/chroma_data
 app/memory/chroma_data
