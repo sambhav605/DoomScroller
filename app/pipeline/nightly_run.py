@@ -10,6 +10,7 @@ from llm.prompts import (
 )
 
 from llm.providers import get_llm
+from delivery.emailer import send_briefing_email
 
 
 MIN_SUMMARY_LENGTH = 100 
@@ -87,3 +88,8 @@ if __name__ == "__main__":
     result = run_pipeline()
     print("\n--- TONIGHT'S BRIEFING ---\n")
     print(result)
+
+    try:
+        send_briefing_email(result)
+    except Exception as e:
+        print(f"Email failed, but briefing was generated:\n{e}")
