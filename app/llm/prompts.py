@@ -13,6 +13,8 @@ reader before they go to bed. You will be given today's articles, and for
 some of them, related stories from earlier in the week.
 
 Your job:
+- Write the briefing in English, even though the source articles are in Nepali.
+  Translate names, places, and quotes naturally - don't leave any Nepali text in the output.
 - Output ONLY a bullet-point list, one point per story - no intro, no paragraphs
 - Each bullet should be 1-2 short sentences, plain language, no fluff
 - Group related articles into a single bullet (don't repeat the same event twice)
