@@ -18,14 +18,14 @@ Most news apps either overwhelm you with a raw feed or give isolated headlines w
 
 ## Architecture
 
-\`\`\`
+```
 RSS Feeds → Fetch → Parse → ┬→ Embed → Store in Chroma (7-day memory)
                               └→ Retrieve related past context
                                         ↓
                               Summarize (Groq → Mistral fallback)
                                         ↓
                                    Email briefing (HTML)
-\`\`\`
+```
 
 ## Tech stack
 
@@ -41,7 +41,7 @@ RSS Feeds → Fetch → Parse → ┬→ Embed → Store in Chroma (7-day memory
 
 ## Project structure
 
-\`\`\`
+```
 DoomScroller/
 ├── requirements.txt
 ├── .env                    # API keys - never commit this
@@ -63,32 +63,37 @@ DoomScroller/
 │       └── emailer.py       # formats (HTML) + sends the nightly email
 └── scripts/
     └── run_once.py           # manual trigger, run from repo root
-\`\`\`
+```
 
 ## Setup
 
 1. Clone the repo and create a virtual environment:
-   \`\`\`
-   python3 -m venv venv
-   source venv/bin/activate
-   \`\`\`
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 
 2. Install dependencies:
-   \`\`\`
-   pip install -r requirements.txt
-   \`\`\`
 
-3. Create a \`.env\` file in the project root:
-   \`\`\`
-   MISTRAL_API_KEY=your_key_here
-   GROQ_API_KEY=your_key_here
-   EMAIL_ADDRESS=your_sender_email@gmail.com
-   EMAIL_PASSWORD=your_gmail_app_password
-   RECIPIENT_EMAIL=where_to_send_briefing@example.com
-   \`\`\`
-   > Use a [Gmail App Password](https://myaccount.google.com/apppasswords), not your regular password. Requires 2-Step Verification enabled.
+```
+pip install -r requirements.txt
+```
+
+3. Create a `.env` file in the project root:
+
+```
+MISTRAL_API_KEY=your_key_here
+GROQ_API_KEY=your_key_here
+EMAIL_ADDRESS=your_sender_email@gmail.com
+EMAIL_PASSWORD=your_gmail_app_password
+RECIPIENT_EMAIL=where_to_send_briefing@example.com
+```
+
+> Use a [Gmail App Password](https://myaccount.google.com/apppasswords), not your regular password. Requires 2-Step Verification enabled.
 
 4. Run the pipeline manually:
-   \`\`\`
-   python3 scripts/run_once.py
-   \`\`\`
+
+```
+python3 scripts/run_once.py
+```
